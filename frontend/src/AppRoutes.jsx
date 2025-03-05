@@ -9,32 +9,23 @@ import DoctorDashboard from "./pages/DoctorDashboard";
 import PatientDashboard from "./pages/PatientDashboard";
 
 const AppRoutes = () => {
-  // const { user } = useContext(AuthContext);
+	// const { user } = useContext(AuthContext);
 
-  return (
-    <Routes>
-      <Route path="/" element={<LandingPage />} />
-      <Route path="/auth/login" element={<LoginPage />} />
-      <Route path="/auth/signup" element={<SignUpPage />} />
+	return (
+		<Routes>
+			<Route path="/" element={<LandingPage />} />
+			<Route path="/auth/login" element={<LoginPage />} />
+			<Route path="/auth/signup" element={<SignUpPage />} />
 
-      {/* Protected Routes Based on Role */}
-      <Route
-        path="/dashboard/doctor"
-        element={<DoctorDashboard />}
-      />
-      <Route
-        path="/dashboard/patient"
-        element={<PatientDashboard />}
-      />
-      <Route
-        path="/dashboard/admin"
-        element={<AdminDashboard />}
-      />
+			{/* Protected Routes Based on Role */}
+			<Route path="/dashboard/doctor" element={<DoctorDashboard />} />
+			<Route path="/dashboard/patient" element={<PatientDashboard />} />
+			<Route path="/dashboard/admin" element={<AdminDashboard />} />
 
-      {/* Redirect unknown routes to landing page */}
-      <Route path="*" element={<Navigate to="/" />} />
-    </Routes>
-  );
+			{/* Redirect unknown routes to landing page */}
+			<Route path="*" element={<Navigate to="/" />} />
+		</Routes>
+	);
 };
 
 export default AppRoutes;
